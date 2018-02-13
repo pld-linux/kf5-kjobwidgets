@@ -1,15 +1,15 @@
-%define		kdeframever	5.39
+%define		kdeframever	5.43
 %define		qtver		5.4.0
 %define		kfname		kjobwidgets
 
 Summary:	Widgets for showing progress of asynchronous jobs
 Name:		kf5-%{kfname}
-Version:	5.39.0
+Version:	5.43.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	d16420f3acafe2cf5bd2a727c0b4ffab
+# Source0-md5:	81d0d0108fbed55099227c616d88aa1b
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
@@ -83,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/kf5_org.kde.JobView.xml
 %{_datadir}/dbus-1/interfaces/kf5_org.kde.JobViewServer.xml
 %{_datadir}/dbus-1/interfaces/kf5_org.kde.JobViewV2.xml
+/etc/xdg/kjobwidgets.categories
 
 %files devel
 %defattr(644,root,root,755)
