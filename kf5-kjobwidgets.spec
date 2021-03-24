@@ -1,5 +1,5 @@
 %define		kdeframever	5.80
-%define		qtver		5.9.0
+%define		qtver		5.14.0
 %define		kfname		kjobwidgets
 
 Summary:	Widgets for showing progress of asynchronous jobs
@@ -11,13 +11,11 @@ Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	a66607de7a156983e3c7daeb6c44995d
 URL:		http://www.kde.org/
-BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5DBus-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Test-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	Qt5X11Extras-devel >= %{qtver}
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.5
 BuildRequires:	kf5-extra-cmake-modules >= %{version}
 BuildRequires:	kf5-kcoreaddons-devel >= %{version}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{version}
@@ -26,8 +24,14 @@ BuildRequires:	pkgconfig
 BuildRequires:	qt5-linguist >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+Requires:	Qt5DBus >= %{qtver}
+Requires:	Qt5Widgets >= %{qtver}
+Requires:	Qt5X11Extras >= %{qtver}
 Requires:	kf5-dirs
+Requires:	kf5-kcoreaddons >= %{version}
+Requires:	kf5-kwidgetsaddons >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
@@ -42,7 +46,7 @@ Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	Qt5Widgets-devel >= %{qtver}
-Requires:	cmake >= 2.6.0
+Requires:	cmake >= 3.5
 Requires:	kf5-kcoreaddons-devel >= %{version}
 
 %description devel
